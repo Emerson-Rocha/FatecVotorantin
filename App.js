@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { PaperProvider, TextInput, MD3LightTheme as DefaultTheme } from 'react-native-paper';
+import { PaperProvider, TextInput, MD3LightTheme as DefaultTheme, Button } from 'react-native-paper';
 
 
 const theme = {
@@ -23,7 +23,7 @@ export default function App() {
 
   return (
 
-    <PaperProvider theme={DefaultTheme}>
+    <PaperProvider theme={DefaultTheme}    >
       <View style={
         {
           alignItems: 'center',
@@ -40,7 +40,7 @@ export default function App() {
         onChangeText={(login) => { setLogin(login) }}
         style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
         mode={"outlined"}
-        
+
       />
 
       <TextInput
@@ -50,6 +50,22 @@ export default function App() {
         mode={"outlined"}
         secureTextEntry={true}
       />
+     <View style={
+        {
+          alignItems: 'center',
+          marginTop: 50
+        }
+      }>
+        <Button icon="camera" mode="contained"
+          onPress={() => console.log('Pressed')}
+          style={{ width: 200, margin: 20 }}
+
+        >
+          Press me
+        </Button>
+      </View>
+
+
     </PaperProvider>
 
   );
